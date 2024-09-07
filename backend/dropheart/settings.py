@@ -30,7 +30,9 @@ SECRET_KEY = "django-insecure-3y!k=4g)+vwc9lre-hd!ar9)*@*3ajk3&q2f9rsc#gc03)%hd7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",") if os.getenv("ALLOWED_HOSTS") else []
+ALLOWED_HOSTS = (
+    os.getenv("ALLOWED_HOSTS", "").split(",") if os.getenv("ALLOWED_HOSTS") else []
+)
 
 
 # Application definition
@@ -45,9 +47,9 @@ INSTALLED_APPS = [
     "rest_framework",
     "djoser",
     "rest_framework_simplejwt.token_blacklist",
-    "backend.api",
+    "api",
     "corsheaders",
-    'django_filters'
+    "django_filters",
 ]
 
 MIDDLEWARE = [
@@ -62,13 +64,11 @@ MIDDLEWARE = [
 ]
 
 
-
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
-    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
-
+    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }
 
 SIMPLE_JWT = {
