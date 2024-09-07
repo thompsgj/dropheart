@@ -36,6 +36,7 @@ class Item(models.Model):
         max_length=15,
         choices=(("AVAILABLE", "Available"), ("UNAVAILABLE", "Unavailable")),
         help_text="The status of the item",
+        default="AVAILABLE",
     )
     item_name = models.CharField(max_length=100, help_text="The name of the item")
     item_description = models.TextField(help_text="A description of the item")

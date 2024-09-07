@@ -53,9 +53,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -78,6 +78,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "https://dropheart-backend-z8c0.onrender.com",
+    "https://dropheart-frontend-web.onrender.com",
 ]
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
@@ -90,7 +91,7 @@ DJOSER = {
 }
 SITE_NAME = "Dropheart"
 
-DOMAIN = "localhost:3000"
+DOMAIN = os.environ.get("DOMAIN", "localhost:3000")
 
 ROOT_URLCONF = "dropheart.urls"
 
