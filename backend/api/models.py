@@ -19,3 +19,12 @@ class Item(models.Model):
     list_time = models.DateTimeField(
         auto_now=True, help_text="The time that the item was listed"
     )
+
+
+# status = Available, Unavailable
+# item_name
+# item_description
+
+
+# sort_api : location, category (AND/OR)
+# search_api : product_name, location, status ()
