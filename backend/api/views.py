@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
+from django_filters import rest_framework as filters
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.response import Response
 from api.models import Item
 from api.serializers import ItemSerializer
@@ -20,9 +22,15 @@ create_item_view = CreateItem.as_view()
 
 
 class ReadItem(generics.ListAPIView):
+    # sort_api : location, category (AND/OR)
     model = Item
     serializer_class = ItemSerializer
     queryset = Item.objects.all()
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = ['location', 'category']
+
+
+
 
     def get(self, request):
         queryset = self.get_queryset()

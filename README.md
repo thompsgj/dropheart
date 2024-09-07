@@ -1,4 +1,4 @@
-# dropheart
+# Dropheart
 
 ## MVP Features
 
