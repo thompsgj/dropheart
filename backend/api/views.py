@@ -36,6 +36,10 @@ class ReadItem(generics.ListAPIView):
         serializer = ItemSerializer(queryset, many=True)
         return Response(serializer.data)
 
+
+retrieve_item_list_view = ReadItem.as_view()
+
+
 class ReadUserItem(generics.ListAPIView):
     # sort_api : location, category (AND/OR)
     model = Item
@@ -43,7 +47,7 @@ class ReadUserItem(generics.ListAPIView):
 
     def get_queryset(self):
         # Fetch the user ID from the request parameters
-        user_id = self.request.query_params.get('user_id')
+        user_id = self.request.query_params.get("user_id")
         if user_id:
             # Filter items by the provided user ID
             return Item.objects.filter(user_id=user_id)
@@ -54,6 +58,9 @@ class ReadUserItem(generics.ListAPIView):
         queryset = self.get_queryset()
         serializer = ItemSerializer(queryset, many=True)
         return Response(serializer.data)
+
+
+retrieve_user_item_list_view = ReadUserItem.as_view()
 
 
 class DeleteItem(generics.DestroyAPIView):
