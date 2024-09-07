@@ -1,5 +1,21 @@
 # dropheart
 
+## MVP Features
+
+- Anonymous Pickup
+
+- Geocache Dropoff
+
+### Additional Features
+
+- Profile Page
+
+- Reporting
+
+- Collaborating with NGOs and Charities
+
+- Multiple languages
+
 A web application that combines the fun and interactive elements of Geocaching with the functionality of a CRUD app for donations. 
 The app will allow users to hide and find "donation caches" in various locations, 
 where people can pick up approved items like socks, masks, period products, etc.
