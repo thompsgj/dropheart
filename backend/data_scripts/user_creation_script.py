@@ -3,13 +3,14 @@ import django
 import random
 
 # Set up Django
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend.dropheart.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dropheart.settings")
 django.setup()
 
 from django.contrib.auth.models import User
 
 first_names = ["James", "Jakob", "Min", "Bob", "Dragon"]
 last_names = ["Brooklyn", "Grazy", "Corn", "Fragment", "Graze"]
+
 
 def create_users():
     for i in range(5):
@@ -18,6 +19,7 @@ def create_users():
         user = User.objects.create_user(username=username, password=password)
         user.save()
         print(f"User {user.username} created successfully.")
+
 
 if __name__ == "__main__":
     create_users()
