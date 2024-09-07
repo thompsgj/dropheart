@@ -30,7 +30,7 @@ SECRET_KEY = "django-insecure-3y!k=4g)+vwc9lre-hd!ar9)*@*3ajk3&q2f9rsc#gc03)%hd7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = list(os.getenv("ALLOWED_HOSTS"))
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",") if os.getenv("ALLOWED_HOSTS") else []
 
 
 # Application definition
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "djoser",
     "rest_framework_simplejwt.token_blacklist",
-    "api",
+    "backend.api",
     "corsheaders",
     'django_filters'
 ]

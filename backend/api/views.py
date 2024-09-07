@@ -27,10 +27,9 @@ class ReadItem(generics.ListAPIView):
     serializer_class = ItemSerializer
     queryset = Item.objects.all()
     filter_backends = [filters.OrderingFilter, SearchFilter]
-    ordering_fields = ['location_id', 'item_type']
+    ordering_fields = ["location_id", "item_type"]
     # search_api : product_name, location, status ()
-    search_fields = ['item_type', "location_id", "status"]
-
+    search_fields = ["item_type", "location_id", "status"]
 
     def get(self, request):
         queryset = self.get_queryset()
