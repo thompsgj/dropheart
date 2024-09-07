@@ -90,7 +90,7 @@ DJOSER = {
 }
 SITE_NAME = "Dropheart"
 
-DOMAIN = "localhost:3000"
+DOMAIN = os.environ.get("DOMAIN", "localhost:3000")
 
 ROOT_URLCONF = "dropheart.urls"
 
