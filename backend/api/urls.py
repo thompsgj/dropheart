@@ -5,7 +5,6 @@ from api.views import (
     delete_item_view,
     retrieve_single_item_view,
     update_item_view,
-    retrieve_user_list_view,
 )
 
 urlpatterns = [
@@ -16,5 +15,4 @@ urlpatterns = [
     ),
     path("/update/<uuid:item_id>/item", update_item_view, name="update_item"),
     path("/items", retrieve_item_list_view, name="retrieve_items"),
-    path("/user_list", retrieve_user_list_view, name="user_list"),
 ]

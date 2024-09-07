@@ -69,35 +69,3 @@ class UpdateItem(generics.UpdateAPIView):
 
 
 update_item_view = UpdateItem.as_view()
-
-
-from django.contrib.auth.models import User
-
-first_names = ["James", "Jakob", "Min", "Bob", "Dragon"]
-last_names = ["Brooklyn", "Grazy", "Corn", "Fragment", "Graze"]
-
-
-import random
-
-
-def create_users():
-    for i in range(5):
-        username = f"{random.choice(first_names)}_{random.choice(last_names)}"
-        password = "".join(random.choices("abcdefghijklmnopqrstuvwxyz", k=8))
-        user = User.objects.create_user(username=username, password=password)
-        user.save()
-        print(f"User {user.username} created successfully.")
-
-
-class UserList(generics.ListAPIView):
-    # sort_api : location, category (AND/OR)
-    model = User
-
-    def get(self, request):
-        create_users()
-
-        queryset = User.objects.all()
-        return Response(queryset)
-
-
-retrieve_user_list_view = UserList.as_view()
