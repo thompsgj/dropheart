@@ -30,7 +30,7 @@ SECRET_KEY = "django-insecure-3y!k=4g)+vwc9lre-hd!ar9)*@*3ajk3&q2f9rsc#gc03)%hd7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = list(os.getenv("ALLOWED_HOSTS"))
 
 
 # Application definition
@@ -70,10 +70,7 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("Bearer",),
 }
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-]
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000"]
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 DJOSER = {
