@@ -78,6 +78,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "https://dropheart-backend-z8c0.onrender.com",
+    "https://dropheart-frontend-web.onrender.com",
 ]
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
