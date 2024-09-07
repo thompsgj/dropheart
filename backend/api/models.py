@@ -15,7 +15,16 @@ class Item(models.Model):
         choices=ITEM_CHOICES, help_text="Type of item dropped off", max_length=15
     )
     image_path = models.TextField(help_text="Path the image location in cloud bucket")
-    # user_id = models.ForeignKey(help_text="The user id who dropped off the item")
+    # user_id = models.ForeignKey(User, help_text="The user id who dropped off the item")
     list_time = models.DateTimeField(
         auto_now=True, help_text="The time that the item was listed"
     )
+
+
+# status = Available, Unavailable
+# item_name
+# item_description
+
+
+# sort_api : location, category (AND/OR)
+# search_api : product_name, location, status ()

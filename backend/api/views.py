@@ -3,6 +3,7 @@ from rest_framework import generics
 from rest_framework.response import Response
 from api.models import Item
 from api.serializers import ItemSerializer
+from rest_framework import status
 
 
 class CreateItem(generics.CreateAPIView):
