@@ -21,9 +21,6 @@ from django.db import models
 #     )
 
 
-from django.db import models
-import uuid
-
 class Item(models.Model):
     ITEM_CHOICES = (
 
@@ -74,9 +71,7 @@ class Item(models.Model):
         return self.item_name
 
 
-# status = Available, Unavailable
-# item_name
-# item_description
+
 
 
 # sort_api : location, category (AND/OR)
