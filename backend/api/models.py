@@ -14,6 +14,7 @@ class Item(models.Model):
         ("ARTS", "Arts"),
         ("MEN_FASHION", "Men_fashion"),
         ("WOMEN_FASHION", "Women_fashion"),
+        ("TOILETRIES", "Toiletries")
     )
 
     item_id = models.UUIDField(
