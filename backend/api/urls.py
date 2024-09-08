@@ -17,7 +17,7 @@ urlpatterns = [
     path("/update/<uuid:item_id>/item", update_item_view, name="update_item"),
     path("/items", retrieve_item_list_view, name="retrieve_items"),
     path(
-        "/retrieve/<uuid:user_id>/items",
+        "/retrieve/<id:user_id>/items",
         retrieve_user_item_list_view,
         name="retrieve_user_items",
     ),
